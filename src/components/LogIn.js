@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Header from './Header';
 import { signInValidation, signUpValidation } from '../utils/validation';
+import { auth } from '../utils/firebase';
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword } from 'firebase/auth';
 const LogIn = () => {
     const [isSignIn,setIsSignIn]=useState(true);
     const [validationMessage,setValidationMessage]=useState("");
@@ -10,16 +12,44 @@ const LogIn = () => {
     let [conPswd,setConPswd]=useState("");
 
     function validateData(){
-        console.log(email);
-        console.log(pswd);
+        let message;
         if(isSignIn){
-            setValidationMessage(signInValidation(email,pswd));
+            message=signInValidation(email,pswd);
         }
         else{
             console.log(name);
-            setValidationMessage(signUpValidation(name,email,pswd,conPswd));
+            message=signUpValidation(name,email,pswd,conPswd);
         }
-        console.log(validationMessage);
+        setValidationMessage(message);
+        if(message) return ;
+
+        if(!isSignIn){
+            createUserWithEmailAndPassword(auth, email, conPswd)
+            .then((userCredential) => {
+                // Signed up 
+                console.log("validation started");
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setValidationMessage(errorCode+"-"+errorMessage);
+            });
+        }
+        else if(isSignIn){
+            signInWithEmailAndPassword(auth, email, pswd)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setValidationMessage(errorCode+"-"+errorMessage);
+            });
+        }
     }
 
   return (
@@ -33,7 +63,7 @@ const LogIn = () => {
                 {!isSignIn?<input className='p-3 bg-black rounded-sm border border-white' type='text' placeholder='Name' value={name} onChange={(e)=>{
                     setName(e.target.value);
                 }}></input>:<></>}
-                <input className='p-3 bg-black rounded-sm border border-white' type='text' placeholder='Email or Phone' value={email} onChange={(e)=>{
+                <input className='p-3 bg-black rounded-sm border border-white' type='text' placeholder='Email' value={email} onChange={(e)=>{
                     setEmail(e.target.value);
                 }}></input>
                 <input className='p-3 bg-black rounded-sm border border-white' type='password' placeholder='Password' value={pswd} onChange={(e)=>{

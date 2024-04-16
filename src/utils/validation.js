@@ -1,10 +1,9 @@
 export const signInValidation=(email,pswd)=>{
     if(email=="" || pswd=="") return "enter the feilds"
-    const emailValidator=/[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}/.test(email);
+    const emailValidator=/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
     if(!emailValidator) return "Email isn't valid.";
     const passwordValidator = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(pswd);
     if(!passwordValidator) return "Password isn't valid.";
-    return "";
 }
 
 
@@ -18,5 +17,4 @@ export const signUpValidation=(name,email,pswd,conPswd)=>{
     if(!emailValidator) return "Email isn't valid.";
     const passwordValidator = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(pswd)
     if(!passwordValidator) return "Password isn't valid.";
-    return "";
 }

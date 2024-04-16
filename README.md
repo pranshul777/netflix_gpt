@@ -16,3 +16,5 @@ avoided form submition's default behaviour
 validation : added validation of details using regex 
 #9
 added and configured FireBase 
+#10
+added SignIn and SignUp options using firebase as BaaS
