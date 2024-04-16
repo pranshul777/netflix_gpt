@@ -14,3 +14,5 @@ we also built header
 avoided form submition's default behaviour
 #8
 validation : added validation of details using regex 
+#9
+added and configured FireBase 
