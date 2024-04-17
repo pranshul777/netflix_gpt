@@ -18,3 +18,8 @@ validation : added validation of details using regex
 added and configured FireBase 
 #10
 added SignIn and SignUp options using firebase as BaaS
+#11
+implemented Complete UserAuthentication using fireBase
+also added current user's detail in redux store
+#12
+implemented sign out
