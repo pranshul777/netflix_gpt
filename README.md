@@ -23,3 +23,15 @@ implemented Complete UserAuthentication using fireBase
 also added current user's detail in redux store
 #12
 implemented sign out
+#13
+moved userAuth listener to header
+#14
+moved all hardCoded data in constant file
+#15
+used TMDB API for data
+#16
+built main video component 
+#17
+built video recommendation section
+#18
+designed the page

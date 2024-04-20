@@ -7,6 +7,7 @@ import { addUser } from '../utils/userSlice';
 import {  useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { updateProfile } from 'firebase/auth';
+import { NetFlix_BackGround, User_logo } from '../utils/constants';
 const LogIn = () => {
     const dispatch=useDispatch();
     const navigate=useNavigate();
@@ -39,13 +40,13 @@ const LogIn = () => {
                 const user = userCredential.user;
                 console.log(user);
 
-                updateProfile(user, {displayName: name, photoURL: "https://lh3.googleusercontent.com/a/ACg8ocIOIOqn01x-1nZV2iMA87sRbQtJR-78ZI0YDCrCC8wdjjHEANA=s519-c-no"})
-                    .then(() => {
-                        const data=auth.currentUser;
-                        dispatch(addUser({name:data.displayName,email:data.email, uid : user.uid}));
-                    }).catch((error) => {
-                        console.log(error);
-                    });
+                updateProfile(user, {displayName: name, photoURL: User_logo})
+                .then(() => {
+                    const data=auth.currentUser;
+                    dispatch(addUser({name:data.displayName,email:data.email, uid : user.uid}));
+                }).catch((error) => {
+                    console.log(error);
+                });
 
                     
                 setName("");
@@ -66,7 +67,6 @@ const LogIn = () => {
                 // Signed in 
                 const user = userCredential.user;
                 console.log(user);
-                navigate("/browse")
                 // ...
             })
             .catch((error) => {
@@ -80,7 +80,7 @@ const LogIn = () => {
   return (
     <div className=' bg-slate-300 w-full h-[100vh] bg-b'>
         <Header/>
-        <img className='relative w-full h-[150vh] brightness-50' src="https://assets.nflxext.com/ffe/siteui/vlv3/c1366fb4-3292-4428-9639-b73f25539794/3417bf9a-0323-4480-84ee-e1cb2ff0966b/IN-en-20240408-popsignuptwoweeks-perspective_alpha_website_large.jpg"></img>
+        <img className='relative w-full h-[150vh] brightness-50' src={NetFlix_BackGround}></img>
         <div className='absolute top-28 left-80 w-[40%] min-h-[120vh] flex flex-col p-12 space-y-5 text-white backdrop-opacity-10 backdrop-invert bg-black/75'>
             <div className='font-bold text-3xl text-white'>{isSignIn?"Sign In" :" Sign Up"}</div>
             

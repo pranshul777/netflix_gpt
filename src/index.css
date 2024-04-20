@@ -13,4 +13,7 @@ code {
 } */
 @tailwind base;
 @tailwind components;
+.scroll{
+  scrollbar-width: none;
+}
 @tailwind utilities;
