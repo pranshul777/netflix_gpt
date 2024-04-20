@@ -9,6 +9,7 @@ import {  onAuthStateChanged } from "firebase/auth";
 import { auth } from './utils/firebase';
 import { addUser, removeUser } from './utils/userSlice';
 import { useState } from 'react';
+import GptSearch from './components/GptSearch';
 
 function App() {
   const dispatch=useDispatch();
@@ -20,6 +21,10 @@ function App() {
     {
       path:"/Browse",
       element:<Browse/>
+    },
+    {
+      path:"/gptSerach",
+      element:<GptSearch/>
     }
   ])
 

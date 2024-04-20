@@ -10,9 +10,30 @@ export const API_Options = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMDlkMzlhNjdiMThmMGMwYzJhMTIxY2ZmNjc5NWUwMCIsInN1YiI6IjY2MWZkYWM1MjBhZjc3MDE2NDNlNDliMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gJ_cUK91RJerP94LP83UK_mOxJ5-8VW6MnWm-GaEUrg'
   }
 };
-export const MovieList_API_URL= 'https://api.themoviedb.org/3/movie/now_playing?include_adult=true?page=1';
-export const MovieListPopular_API_URL= 'https://api.themoviedb.org/3/movie/popular?include_adult=true?page=1';
-export const MovieListTrendy_API_URL= 'https://api.themoviedb.org/3/trending/movie/week?include_adult=true';
+export const MovieList_API_URL= 'https://api.themoviedb.org/3/movie/now_playing?include_adult=true&page=1';
+export const MovieListPopular_API_URL= 'https://api.themoviedb.org/3/movie/popular?include_adult=true&page=1';
+export const MovieListTopRated_API_URL= 'https://api.themoviedb.org/3/movie/top_rated?include_adult=true&page=1';
 export const TVListTrendy_API_URL='https://api.themoviedb.org/3/trending/tv/day??include_adult=true';
 export const Movie_Videos_API='https://api.themoviedb.org/3/movie/movie_id/videos?language=en-US';
 export const CDN_URL='https://media.themoviedb.org/t/p/w440_and_h660_face';
+
+export const Language={
+  'en':{
+    searchTxt:"what would you like to search today",
+    searchSymbol : 'Get',
+    gptBtn : "Home",
+    signbtn: "Sign Out"
+  },
+  'hi':{
+    searchTxt:"आज आप क्या देखना चाहेंगे?",
+    searchSymbol : 'पाये',
+    gptBtn : "घर",
+    signbtn:"साइन आउट"
+  },
+  'sans':{
+    searchTxt:"अद्य भवन्तः किं द्रष्टुम् इच्छन्ति",
+    searchSymbol : 'प्राप्नोतु',
+    gptBtn : "गृहम्‌",
+    signbtn:"साइन आउट इति"
+  }
+}

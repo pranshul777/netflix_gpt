@@ -13,7 +13,7 @@ const SecondaryPage = () => {
             <div className='scroll flex space-x-3 px-5 py-3 overflow-x-scroll'>{
                 showList.popularList.map(movies=><MovieCard image={movies.poster_path} id={movies.id} key={movies.id}/>)
             }</div>
-            <div className='font-semibold pl-8 text-white text-2xl'>Trending</div>
+            <div className='font-semibold pl-8 text-white text-2xl'>Top Rated</div>
             <div className='scroll flex space-x-3 px-5 py-3 overflow-x-scroll'>{
                 showList.trendyList.map(movies=><MovieCard image={movies.poster_path} id={movies.id} key={movies.id}/>)
             }</div>

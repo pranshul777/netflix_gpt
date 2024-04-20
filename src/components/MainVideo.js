@@ -27,7 +27,7 @@ const MainVideo = () => {
             //  console.log(json);
             
              setTrailerVideo(json?.results?.filter(item=>item.type==="Trailer")[1]);
-             console.log(trailerVideo);
+            //  console.log(trailerVideo);
         })
         .catch(err => console.error('error:' + err));
     }

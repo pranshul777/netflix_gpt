@@ -30,8 +30,18 @@ moved all hardCoded data in constant file
 #15
 used TMDB API for data
 #16
-built main video component 
+used redux to store movies data
 #17
-built video recommendation section
+built main video component 
 #18
+built video recommendation section
+#19
+built movie card
+#20
 designed the page
+#21
+created new page "Gpt Search", provide routing
+#22
+design the new page
+#23
+implemented MULTILINGUAL support in new page
