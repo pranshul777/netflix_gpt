@@ -38,10 +38,18 @@ built video recommendation section
 #19
 built movie card
 #20
-designed the page
+designed the main page
 #21
 created new page "Gpt Search", provide routing
 #22
 design the new page
 #23
 implemented MULTILINGUAL support in new page
+#24
+created search bar for GPT
+#25
+integrated AI APIs
+#26
+integrated TMDB APIs with AI APIs
+#27
+designed the new page
